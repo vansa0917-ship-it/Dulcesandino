@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulces Andinos - Catálogo</title>
+    <style>
+        :root {
+            --primario: #8d5524; /* Color Arequipe */
+            --secundario: #f4d06f; /* Color Crema/Natilla */
+            --acento: #e76f51; /* Color Dulce de Breva */
+            --fondo: #fffaf0;
+            --texto: #2b2d42;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--fondo);
+            color: var(--texto);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1582298538104-fe2e74c27f59?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            border-bottom: 5px solid var(--acento);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Rejilla de productos */
+        .catalogo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Tarjeta de Producto */
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primario);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.4rem;
+        }
+
+        .card-text {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Badge de Disponibilidad */
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .disponible { background-color: #d4edda; color: #155724; }
+        .agotado { background-color: #f8d7da; color: #721c24; }
+
+        /* Botón de Pedido por WhatsApp */
+        .btn-whatsapp {
+            display: block;
+            text-align: center;
+            background-color: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128c7e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--primario);
+            color: white;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🍮 Dulces Andinos</h1>
+    <p>El sabor de Medellín en su mesa</p>
+</header>
+
+<div class="container">
+    <div class="catalogo">
+        <div class="card">
+            <span class="badge disponible">Disponible</span>
+            <img src="https://images.unsplash.com/photo-1590080874088-eec64895b423?auto=format&fit=crop&q=80&w=500" alt="Brevas con Arequipe" class="card-img">
+            <div class="card-body">
+                <span class="price">$5.000</span>
+                <h2 class="card-title">Brevas con Arequipe</h2>
+                <p class="card-text">Deliciosas brevas caladas acompañadas del más suave arequipe artesanal.</p>
+                <a href="#" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="badge disponible">Disponible</span>
+            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&q=80&w=500" alt="Natilla" class="card-img">
+            <div class="card-body">
+                <span class="price">$4.500</span>
+                <h2 class="card-title">Natilla Maicena</h2>
+                <p class="card-text">Receta tradicional con un toque de canela y mucho amor antioqueño.</p>
+                <a href="#" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="badge agotado">Agotado</span>
+            <img src="https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&q=80&w=500" alt="Buñuelos" class="card-img">
+            <div class="card-body">
+                <span class="price">$2.000</span>
+                <h2 class="card-title">Buñuelo Calientico</h2>
+                <p class="card-text">Esponjosos por dentro y crocantes por fuera. ¡Se agotan rápido!</p>
+                <a href="#" class="btn-whatsapp">Consultar Próxima Tanda</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Dulces Andinos - Barrio Belén, Medellín</p>
+</footer>
+
+</body>
+</html>
